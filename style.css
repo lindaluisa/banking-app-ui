@@ -1,0 +1,116 @@
+/* Global Styles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Futura";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1D1B34;  
+}
+
+.title {
+  font-size: 18px;
+  color: rgb(233, 233, 233);
+}
+
+/* Header */
+.b-header {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.b-header h1 {
+  font-size: 25px;
+  font-weight: 400;
+  flex: 2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.b-menu-icon-wrapper {
+  background-color: #22223A;
+  border-radius: 500px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.b-dots-wrapper div {
+  border-radius: 500px;
+  height: 5px;
+  width: 5px;
+  margin: 4px 2px;
+} 
+
+.b-light-dot {
+  background-color: #A1ABBC;
+}
+
+.b-dark-dot {
+  background-color: #55546D;
+}
+
+.b-calendar-wrapper {
+  background-color: #22223A;
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+}
+
+.b-calendar-wrapper svg{
+  transform: scale(0.8);
+  opacity: 0.5;
+
+}
+
+
+/* BALANCE WRAPPER */
+.b-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.b-balance h3 {
+  color: #55546D;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.b-balance h1 {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.b-balance h1 span {
+  font-size: 16px;
+}
+
+
+/* FOOTER */
+.b-footer {
+  background-color: #55546D;;
+  padding: 40px;
+  width: 100vw;
+  position:fixed;
+  bottom:0;
+  display: flex;
+  justify-content: center;
+}
