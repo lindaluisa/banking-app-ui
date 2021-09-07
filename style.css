@@ -5,6 +5,7 @@
   box-sizing: border-box;
   color: #fff;
   font-family: "Futura";
+  font-weight: 400;
 }
 
 body {
@@ -21,7 +22,7 @@ body {
 /* Header */
 .b-header {
   width: 100%;
-  padding: 30px;
+  padding: 40px 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -74,43 +75,102 @@ body {
 .b-calendar-wrapper svg{
   transform: scale(0.8);
   opacity: 0.5;
-
 }
-
 
 /* BALANCE WRAPPER */
 .b-balance {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 }
 
-.b-balance h3 {
+.b-balance .b-balance-title {
   color: #55546D;
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 1px;
-  font-weight: 400;
   margin-bottom: 5px;
 }
 
-.b-balance h1 {
+.b-balance .b-balance-amount{
   font-size: 25px;
   letter-spacing: 1px;
 }
 
-.b-balance h1 span {
+.b-balance .b-balance-amount span {
   font-size: 16px;
 }
 
 
-/* FOOTER */
-.b-footer {
-  background-color: #55546D;;
-  padding: 40px;
-  width: 100vw;
-  position:fixed;
-  bottom:0;
-  display: flex;
-  justify-content: center;
+/* HR */
+.b-trippy-line { 
+  margin: 35px 60px;
+  height: 1px;
+  background: #55546D;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#1D1B34), to(#1D1B34), color-stop(50%,#55546D));
+  opacity: 0.5;
 }
+
+/* ACTIVITY */
+.b-activity {
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.b-activity-title {
+  font-size: 17px;
+}
+
+.b-expense-btn {
+  display: flex;
+  border: 1px solid #55546D;
+  border-radius: 13px;
+  padding: 5px 5px 2px 10px;
+}
+
+.b-expense-btn h4 {
+  font-size: 13px;
+  margin: 1px 2px 0 0;
+
+}
+
+.b-expense-btn svg {
+  transform: scale(0.7);
+}
+
+/* GRAPH */
+.b-graph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.b-graph-img {
+  height: 200px;
+  align-self: center;
+}
+
+.b-months {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 55px;
+  margin-top: 15px;
+}
+
+#b-months-active {
+  color: white;
+}
+
+.b-months h3 {
+  font-size: 11px;
+  color: #555460;
+}
+
+
