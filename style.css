@@ -15,6 +15,8 @@ body, html {
   overflow: hidden; 
 }
 
+a { text-decoration: none; }
+
 .title {
   font-size: 18px;
   color: rgb(233, 233, 233);
@@ -63,7 +65,7 @@ body, html {
   background-color: #55546D;
 }
 
-.b-calendar-wrapper {
+.b-icon-wrapper {
   background-color: #22223A;
   border-radius: 500px;
   display: flex;
@@ -79,7 +81,7 @@ body, html {
 }
 
 /* BALANCE WRAPPER */
-.b-balance {
+.b-balance-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +116,7 @@ body, html {
 }
 
 /* ACTIVITY */
-.b-activity {
+.b-activity-section {
   padding: 0px 40px;
   display: flex;
   flex-direction: row;
@@ -143,7 +145,7 @@ body, html {
 }
 
 /* GRAPH */
-.b-graph {
+.b-graph-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,7 +177,7 @@ body, html {
 
 
 /* CREDIT CARD */
-.b-card {
+.b-card-section {
   display: flex;
 	position: absolute;
 	bottom: 0;
@@ -226,5 +228,57 @@ body, html {
 .b-card-top img {
   height: 15px;
   margin-left: -5px;
+}
+
+/* EXPENSES COMPONENT */
+
+.b-transactions-section {
+  border-top: 1px solid #1d1b34;
+  border-radius: 30px;
+  margin-top: 40px;
+  background: linear-gradient(358deg, #1d1b34, #22223a);
+}
+
+.b-drag {
+  border: 2px solid white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  opacity: 0.5;
+  margin: 10px auto;
+  width: 55px;
+}
+
+.b-transactions {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.b-trans-all {
+  opacity: 0.5;
+}
+
+.b-expenses-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.b-item-name {
+  margin-bottom: 10px; #
+}
+
+.b-item-time {
+  opacity: 0.5;
+}
+
+.b-item-expense span {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.b-expenses-icon {
+  background: linear-gradient(45deg, #ac278a, #5855FC);
 }
 
