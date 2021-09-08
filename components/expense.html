@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../style.css">
 
-  <title>ling Bank Bling</title>
+  <title>Bling Bank Bling</title>
 </head>
 
 
@@ -45,13 +45,13 @@
       <h1 class="b-balance-amount">1.000.000,00 <span>USD</span></h1>
     </section>
 
-    <section class="b-transactions-section">
+    <section id="b-toggle-trans"  class="b-transactions-section">
 
-      <hr class="b-drag">
+      <hr class="b-drag" onclick="toggleExpenses()">
 
       <div class="b-transactions">
         <h3 class="b-trans-title">Last transactions</h3>
-        <h4 class="b-trans-all">View all</h4>
+        <h4 class="b-trans-all" onclick="toggleExpenses()">View all</h4>
       </div>
 
       <div class="b-expenses-list">
@@ -64,7 +64,7 @@
               <div class="b-item-name">Beauty salon</div>
               <div class="b-item-time">04:40 PM</div>
             </div>
-            <div class="b-item-expense">- 322.40 <span>USD</span></div>
+            <div class="b-item-amount">- 322.40 <span>USD</span></div>
           </li>
 
           <li class="b-expenses-item">
@@ -75,7 +75,7 @@
               <div class="b-item-name">Sushi Dinner</div>
               <div class="b-item-time">08:15 PM</div>
             </div>
-            <div class="b-item-expense">- 322.40 <span>USD</span></div>
+            <div class="b-item-amount">- 322.40 <span>USD</span></div>
           </li>
 
           <li class="b-expenses-item">
@@ -83,21 +83,21 @@
               <i class="fas fa-hamburger"></i>
             </div>
             <div class="b-item-descr">
-              <div class="b-item-name">Donuts</div>
+              <div class="b-item-name">Carrot Juice</div>
               <div class="b-item-time">09:20 AM</div>
             </div>
-            <div class="b-item-expense">- 03.40 <span>USD</span></div>
+            <div class="b-item-amount">- 03.40 <span>USD</span></div>
           </li>
 
           <li class="b-expenses-item">
             <div class="b-icon-wrapper b-expenses-icon">
-              <div>BS</div>
+              <div>MB</div>
             </div>
             <div class="b-item-descr">
-              <div class="b-item-name">Book Store</div>
+              <div class="b-item-name">Med Books</div>
               <div class="b-item-time">09:00 AM</div>
             </div>
-            <div class="b-item-expense">- 19.40 <span>USD</span></div>
+            <div class="b-item-amount">- 19.40 <span>USD</span></div>
           </li>
 
           <li class="b-expenses-item">
@@ -108,30 +108,19 @@
               <div class="b-item-name">Carwash</div>
               <div class="b-item-time">09:00 AM</div>
             </div>
-            <div class="b-item-expense">- 109.40 <span>USD</span></div>
+            <div class="b-item-amount">- 109.40 <span>USD</span></div>
           </li>
 
-          <!-- <li class="b-expenses-item">
+          <li class="b-expenses-item">
             <div class="b-icon-wrapper b-expenses-icon">
-              <i class="fas fa-car"></i>
-            </div>
+              <i class="fas fa-shoe-prints"></i>            </div>
             <div class="b-item-descr">
-              <div class="b-item-name">Carwash</div>
-              <div class="b-item-time">09:00 AM</div>
+              <div class="b-item-name">Salsa Class</div>
+              <div class="b-item-time">10:00 PM</div>
             </div>
-            <div class="b-item-expense">- 109.40 <span>USD</span></div>
+            <div class="b-item-amount">- 16.00 <span>USD</span></div>
           </li>
           
-          <li class="b-expenses-item">
-            <div class="b-icon-wrapper b-expenses-icon">
-              <i class="fas fa-car"></i>
-            </div>
-            <div class="b-item-descr">
-              <div class="b-item-name">Carwash</div>
-              <div class="b-item-time">09:00 AM</div>
-            </div>
-            <div class="b-item-expense">- 109.40 <span>USD</span></div>
-          </li> -->
           
         </ul>
       </div>
@@ -139,4 +128,6 @@
     </section>
   </main>
 </body>
-</html>
+
+  <script src="../js/script.js"></script>
+</html> 
