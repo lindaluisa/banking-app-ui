@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="components/expense.html">
+  <link rel="stylesheet" href="components/hello.html">
   
   <title>Bling Bank Bling</title>
 </head>
@@ -30,16 +31,18 @@
         </div>
 
         <h1>My wallet</h1>
-        <div class="b-icon-wrapper">
-          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13a1 1 0 110-2 1 1 0 010 2zM8 17a1 1 0 110-2 1 1 0 010 2zM11 16a1 1 0 102 0 1 1 0 00-2 0zM16 17a1 1 0 110-2 1 1 0 010 2zM11 12a1 1 0 102 0 1 1 0 00-2 0zM16 13a1 1 0 110-2 1 1 0 010 2zM8 7a1 1 0 000 2h8a1 1 0 100-2H8z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3a3 3 0 00-3 3v12a3 3 0 003 3h12a3 3 0 003-3V6a3 3 0 00-3-3H6zm12 2H6a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1z" fill="currentColor"/></svg>
-        </div>
+        <a href="components/hello.html"> 
+          <div class="b-icon-wrapper">
+            <img class="b-avatar" src="img/b-linda-avatar.jpg" alt="User Avatar">
+          </div>
+        </a>
 
     </header>
 
     <section class="b-balance-section">
 
-      <h3 class="b-balance-title">My balance</h3>
-      <h1 class="b-balance-amount">1.000.000,00 <span>USD</span></h1>
+      <h3 class="b-subtitle">My balance</h3>
+      <h1 class="b-balance-amount">15,269 <span>€</span></h1>
     </section>
 
     <div class="b-trippy-line"></div>
@@ -116,5 +119,5 @@
 
   </main>
 </body>
-<script src="../js/script.js"></script>
+<script src="js/script.js"></script>
 </html>

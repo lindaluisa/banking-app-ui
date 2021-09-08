@@ -1,4 +1,4 @@
-/* Global Styles*/
+/* GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +20,14 @@ a { text-decoration: none; }
 .title {
   font-size: 18px;
   color: rgb(233, 233, 233);
+}
+
+.b-subtitle {
+  color: #55546D;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
 }
 
 /* Header */
@@ -75,6 +83,11 @@ a { text-decoration: none; }
   width: 50px;
 }
 
+.b-icon-wrapper .b-avatar {
+  width: 50px;
+  border-radius: 500px;
+}
+
 .b-calendar-wrapper svg{
   transform: scale(0.8);
   opacity: 0.5;
@@ -86,14 +99,6 @@ a { text-decoration: none; }
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-}
-
- .b-balance-title {
-  color: #55546D;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
 }
 
 .b-balance .b-balance-amount{
@@ -247,9 +252,8 @@ a { text-decoration: none; }
   width: 100%;
 }
 
-
 .b-drag {
-  border: 2px solid white;
+  border: 2px solid #ac278a;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   opacity: 0.5;
@@ -260,11 +264,8 @@ a { text-decoration: none; }
 .b-transactions {
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
   padding: 25px 0;
-}
-
-.b-trans-all {
-  opacity: 0.5;
 }
 
 .b-expenses-item {
@@ -295,3 +296,46 @@ a { text-decoration: none; }
   background: linear-gradient(45deg, #ac278a, #5855FC);
 }
 
+/* HELLO SECTION */ 
+.b-overview-subheader {
+  padding: 5px 30px;
+}
+
+.b-overview-section {
+  display: flex;  
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.b-overview {
+  height: 110px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 35px 15px;
+  background: linear-gradient(180deg, #ac278a, #5855FC);
+}
+
+.b-overview-title {
+  opacity: 0.5;
+}
+
+.b-account {
+  padding: 5px 30px;
+}
+
+.b-qrcode-icon {
+  margin: 20px 0px;
+}
+
+.b-qrcode-section {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  text-transform: capitalize;
+  padding: 5px 30px;
+  
+}
