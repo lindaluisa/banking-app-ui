@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../style.css">
-
-  <title>Bling Bank Bling</title>
-</head>
-
-
-<body>
-
+<%- include('partials/header'); -%>
 
   <header class="b-header">
 
-    <a href="../index.html">
+    <a href="/">
     <div class="b-menu-icon-wrapper">
 
         <div class="b-dots-wrapper">
@@ -33,13 +19,14 @@
     </a>
 
     <h1>Expenses</h1>
-    <a href="../components/hello.html"> 
+    <a href="/hello"> 
       <div class="b-icon-wrapper">
-        <img class="b-avatar" src="../img/b-linda-avatar.jpg" alt="User Avatar">
+        <img class="b-avatar" src="/b-linda-avatar.jpg" alt="User Avatar">
       </div>
     </a>
 
   </header>
+
 
   <main>
     <section class="b-balance-section">
@@ -130,7 +117,14 @@
 
     </section>
   </main>
-</body>
 
-  <script src="../js/script.js"></script>
-</html> 
+
+  <script>
+    function toggleExpenses() {
+      var element = document.getElementById("b-toggle-trans");
+      element.classList.toggle("b-transactions-up");
+    }
+  </script>
+
+  
+  <%- include('partials/footer'); -%>

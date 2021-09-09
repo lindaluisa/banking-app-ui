@@ -1,0 +1,112 @@
+<%- include('partials/header'); -%>
+
+<main>
+
+  <header class="b-header">
+
+      <div class="b-menu-icon-wrapper">
+
+        <div class="b-dots-wrapper">
+          <div class="b-light-dot"></div>
+          <div class="b-dark-dot"></div>
+        </div>
+
+
+        <div class="b-dots-wrapper">
+          <div class="b-dark-dot"></div>
+          <div class="b-light-dot"></div>
+        </div>
+
+      </div>
+
+      <h1>My wallet</h1>
+      <!-- <a href="/hello">  -->
+      <a href="/login"> 
+        <div class="b-icon-wrapper">
+          <img class="b-avatar" src="/b-linda-avatar.jpg" alt="User Avatar">
+        </div>
+      </a>
+
+  </header>
+
+  <section class="b-balance-section">
+
+    <h3 class="b-subtitle">My balance</h3>
+    <h1 class="b-balance-amount">15,269 <span>€</span></h1>
+  </section>
+
+  <div class="b-trippy-line"></div>
+  
+  <section class="b-activity-section">
+    <h3 class="b-activity-title">Your activity</h3>
+      <a href="/expense">
+      <div class="b-btn">
+        <h4>Expense</h4>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.343 7.757L4.93 9.172 12 16.242l7.071-7.07-1.414-1.415L12 13.414 6.343 7.757z" fill="currentColor"/></svg>
+      </div>
+    </a>
+  </section>
+
+  <section class="b-graph-section">
+
+    <img class="b-graph-img" src="/b-graph.png" alt="Expenses Graph">
+
+    <div class="b-months">
+      <h3>OCT</h3>
+      <h3 id="b-months-active">NOV</h3>
+      <h3>DEC</h3>
+      <h3>JAN</h3>
+    </div>
+
+  </section>
+
+  <section class="b-card-section">
+
+    <div class="b-card-wrapper">
+
+        <div class="b-card-top">
+            <img src="/b-visa.png" alt="VISA Logo">
+          <span>01/24</span>
+        </div>
+
+        <div class="b-card-bottom">
+          <h3>Credit Card</h3>
+          <span>&#9679;&#9679;&#9679;&#9679; 4354 </span> 
+        </div>
+
+    </div>
+
+    <div class="b-card-wrapper b-card-wrapper-2">
+
+        <div class="b-card-top">
+          <img src="/b-visa.png" alt="VISA Logo">
+          <span>11/23</span>
+        </div>
+
+        <div class="b-card-bottom">
+          <h3>Credit Card</h3>
+          <span>&#9679;&#9679;&#9679;&#9679; 4354 </span> 
+        </div>
+
+    </div>
+    
+    <div class="b-card-wrapper b-card-wrapper-2">
+
+        <div class="b-card-top">
+          <img src="/b-visa.png" alt="VISA Logo">
+          <span>9/12</span>
+        </div>
+
+        <div class="b-card-bottom">
+          <h3>Credit Card</h3>
+          <span>&#9679;&#9679;&#9679;&#9679; 4354 </span> 
+        </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+<%- include('partials/footer'); -%>

@@ -1,10 +1,13 @@
-# banking-app-ui
+# Blink Bank Blink
+
+## Money is a Thing.
 
 Adding one feature at a time using **HTML, CSS and Vanilla JS** for now.
 
 
 Code base:
-- [x] HTML, CSS, Vanilla JS
+- [x] HTML, CSS, JS
+- [x] Node.js, Express, MongoDB
 - [x] User-friendly Design
 - [x] Mobile First
 - [x] QR Code API
