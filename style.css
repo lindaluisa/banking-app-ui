@@ -363,3 +363,50 @@ a { text-decoration: none; }
   border-image-source: linear-gradient(to left, #ac278a, #5855FC);
   border-radius: 15px;
 }
+
+/* LOGIN & SIGNUP */
+.b-login-section {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.b-login-form {
+  background: linear-gradient(to left, #ac278a, #5855FC);
+  margin: 20px;
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.b-input-login {
+  width: 100%;
+  padding: 4px;
+  margin: 10px 0;
+  background: #22223a;
+  border-radius: 30px;
+  border: 1px solid #55546d;
+  opacity: 0.5;
+}
+
+
+.b-vertical {
+  transform: rotate(338deg);
+  color: white;
+  font-size: 70px;
+  text-transform: uppercase;
+  position: relative;
+  top: -105px;
+  left: 130px;
+}
+
+.b-login-btn {
+  text-align: center;
+  border: 1px solid #55546D;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0 40px;
+}
