@@ -30,7 +30,26 @@ a { text-decoration: none; }
   margin-bottom: 5px;
 }
 
-/* Header */
+.b-btn {
+  display: flex;
+  border: 1px solid #55546D;
+  border-radius: 13px;
+  padding: 5px 5px 2px 10px;
+}
+
+.b-trippy-line { 
+  margin: 35px 60px;
+  height: 1px;
+  background: #55546D;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#1D1B34), to(#1D1B34), color-stop(50%,#55546D));
+  opacity: 0.5;
+}
+
+.b-space {
+  padding: 5px 30px;
+}
+
+/* HEADER */
 .b-header {
   width: 100%;
   padding: 40px 30px;
@@ -110,16 +129,6 @@ a { text-decoration: none; }
   font-size: 16px;
 }
 
-
-/* HR */
-.b-trippy-line { 
-  margin: 35px 60px;
-  height: 1px;
-  background: #55546D;
-  background: -webkit-gradient(linear, 0 0, 100% 0, from(#1D1B34), to(#1D1B34), color-stop(50%,#55546D));
-  opacity: 0.5;
-}
-
 /* ACTIVITY */
 .b-activity-section {
   padding: 0px 40px;
@@ -133,19 +142,12 @@ a { text-decoration: none; }
   font-size: 17px;
 }
 
-.b-expense-btn {
-  display: flex;
-  border: 1px solid #55546D;
-  border-radius: 13px;
-  padding: 5px 5px 2px 10px;
-}
-
-.b-expense-btn h4 {
+.b-btn h4 {
   font-size: 13px;
   margin: 1px 2px 0 0;
 }
 
-.b-expense-btn svg {
+.b-btn svg {
   transform: scale(0.7);
 }
 
@@ -180,14 +182,12 @@ a { text-decoration: none; }
   color: #555460;
 }
 
-
 /* CREDIT CARD */
 .b-card-section {
   display: flex;
 	position: absolute;
 	bottom: 0;
 	padding: 10px;
-	/* overflow: shxow; */
 }
 
 .b-card-wrapper {
@@ -236,7 +236,6 @@ a { text-decoration: none; }
 }
 
 /* EXPENSES COMPONENT */
-
 .b-transactions-section {
   border-top: 1px solid #1d1b34;
   border-radius: 30px;
@@ -323,9 +322,6 @@ a { text-decoration: none; }
   opacity: 0.5;
 }
 
-.b-account {
-  padding: 5px 30px;
-}
 
 .b-qrcode-icon {
   margin: 20px 0px;
@@ -336,6 +332,34 @@ a { text-decoration: none; }
   flex-direction: column;
   align-items:center;
   text-transform: capitalize;
-  padding: 5px 30px;
-  
+}
+
+/* QR CODE */
+.b-input-amount[type=number] {
+  width: 30%;
+  padding: 4px;
+  margin: 10px 0;
+  background: #22223a;
+  border-radius: 30px;
+  border: 1px solid #55546d;
+  opacity: 0.5;
+}
+
+.b-input-required[type=number] {
+  border: 5px solid #ac278a;
+}
+
+.b-qr-btn h4 {
+  font-size: 13px;
+  margin: 0px 3px 0 0;
+  padding: 5px 15px;
+}
+
+.b-qrcode-wrapper {
+  margin-top: 20px;
+  border: 15px solid;
+  padding: 15px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #ac278a, #5855FC);
+  border-radius: 15px;
 }

@@ -19,8 +19,6 @@
           <div class="b-light-dot"></div>
           <div class="b-dark-dot"></div>
         </div>
-
-
         <div class="b-dots-wrapper">
           <div class="b-dark-dot"></div>
           <div class="b-light-dot"></div>
@@ -33,11 +31,86 @@
  
       <div class="b-menu-icon-wrapper"><i class="fas fa-qrcode"></i></div>
 
+    </header>
 
-</header>
+    <main>
 
-<main>
+    <section class="b-account-section">
+      <div class="b-space">
+        <h4 class="b-subtitle">Generate a QR code for the sender to scan and transfer money to you.</h4>
+      </div>
+        <form>
+          <div class="b-space">
+            <h3 class="b-title">Name</h3>
+            <h4 class="b-subtitle">Linda Luisa Valle de Rosas</h4>
+          </div>
+          <div class="b-space">
+            <h3 class="b-title">Bank Account</h3>
+            <h4 class="b-subtitle">B6715 Cool Bank</h4>
+          </div>
+          <div class="b-space">
+            <h3 class="b-title">IBAN</h3>
+            <h4 id="qr-iban" class="b-subtitle">DE61500105172558634445</h4>
+          </div>
+          <div class="b-space">
+            <h3 class="b-title">BIC</h3>
+            <h4 class="b-subtitle">HELADEF1234</h4>
+          </div>
+          <div class="b-space">
+            <label class="b-title" for="qr-data">Transaction Amount</label>
+            <div>
+              <input required id="qr-data" class="b-input-amount" type="number" name="qr-data"><span> €</span>
+            </div>
+          </div>
+        </form> 
 
-</main>
+      </section>
+
+
+
+      <section class="b-qrcode-section">
+        <div class="b-space" onclick="generateQR()">
+            <div class="b-btn b-qr-btn">
+              <h4>Generate QR Code</h4>
+            </div>
+        </div>
+        
+        <div class="b-qrcode-wrapper">
+          <div id="qrcode"></div>
+        </div>
+      </section>
+
+  <main>
+
+
+  <script src="../library/qrcode.min.js"></script>
+  <script src="../js/script.js"></script>
+
+  <script type="text/javascript">
+    let qrdata = document.getElementById('qr-data');
+    let qriban = document.getElementById('qr-iban');
+    
+    const qrcode = new QRCode(document.getElementById("qrcode"), {
+      width: 170,
+      height: 170,
+      colorDark : "#2D2038",
+      colorLight : "#fff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    function generateQR() {
+      let data = qriban.innerText + ", Payment Amount:" +  qrdata.value + "." ;
+
+      if (qrdata.value != 0) {
+        qrdata.classList.remove("b-input-required");
+        qrcode.clear();
+        qrcode.makeCode(data);
+      } else {
+        qrdata.classList.add("b-input-required");
+      }
+    }
+  </script>
+
+
 </body>
 </html>
