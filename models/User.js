@@ -14,10 +14,22 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Please enter a password'],
     minlength: [6, 'The password must be at least 6 characters long']
   }
-})
+});
 
-// model based on schema
-// name (e.g., 'user') must be the singular of db collection name
+// MONGOOSE PRE & POST HOOKS 
+// fire fn BEFORE new user is saved to db; this: local instant of the user before being saved in the db; next(); leads to the next middleware
+userSchema.pre('save', function(next){
+  console.log('user about to be created', this);
+  next();
+});
+
+// fire fn AFTER new user is saved to db
+userSchema.post('save', function(storedCredentials, next){
+  console.log('a new user was created & saved', storedCredentials);
+  next();
+});
+
+// model based on schema; name (e.g., 'user') must be the singular of db collection name
 const User = mongoose.model('user', userSchema);
 
 module.exports = User;
