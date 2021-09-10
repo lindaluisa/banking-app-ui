@@ -17,6 +17,13 @@ body, html {
 
 a { text-decoration: none; }
 
+button {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+  }
+
 .title {
   font-size: 18px;
   color: rgb(233, 233, 233);

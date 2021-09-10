@@ -12,18 +12,19 @@ With the words of Wu-Tang-Clan:
 Code base:
 - [x] HTML, CSS, JS
 - [x] Node.js, Express, MongoDB
+- [x] Object Data Modelin with Mongoose
+- [x] Login System with Hashing
 - [x] User-friendly Design
 - [x] Mobile First
 - [x] QR Code API
-- [x] CSS: Flexbox, Toggle
-- [x] JS: API, input validation
+- [x] CSS: Flexbox, Toggle, Media Queries (iPad)
+- [x] JS: API, input validation, asyn/await fn
 
 
 
 Next features:
-- [x] Login System with Node.js
-- [x] Moving to React
-- [x] Media Queries
-- [x] ...
-- [x] ...
-- [x] ...any ideas? : )
+- [ ] Moving to React
+- [ ] Media Queries for desktop
+- [ ] ...
+- [ ] ...
+

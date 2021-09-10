@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 const { isEmail } = require('validator'); 
 
 const userSchema = new mongoose.Schema({
@@ -18,8 +19,10 @@ const userSchema = new mongoose.Schema({
 
 // MONGOOSE PRE & POST HOOKS 
 // fire fn BEFORE new user is saved to db; this: local instant of the user before being saved in the db; next(); leads to the next middleware
-userSchema.pre('save', function(next){
+userSchema.pre('save', async function(next){
   console.log('user about to be created', this);
+  const salt = await bcrypt.genSalt();
+  this.password = await bcrypt.hash(this.password, salt); //this.pw refers to the pw the user tries to store
   next();
 });
 

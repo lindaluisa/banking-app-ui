@@ -13,31 +13,46 @@
       <section class="b-login-section b-space">
 
         <h4 class="b-login-title b-space">The only banking app you'll ever need.</h4>
-        <form class="b-login-form" action="/signup">
-          <h2>Signup</h2>
-          <div class="b-login-wrapper b-subtitle">
+        <form id="form1" class="b-login-form" action="/signup">
+          <h2>Sign up</h2>
+          <!-- <div class="b-login-wrapper b-subtitle"> -->
 
               <label for="email">Email</label>
-              <input class="b-input-login" type="text" name="email"/>
-          
+              <input class="b-input-login" type="text" name="email" required/>
               <div class="email error"></div>
+          
               <label for="password">Password</label>
-              <input class="b-input-login" type="password" name="password"/>
-
+              <input class="b-input-login" type="password" name="password" required/>
               <div class="password error"></div>
-            </div>
+
+            <!-- </div> -->
           </form>
         </section>
 
-
-        <div class="">
-          <a href="/">
-            <div class="b-login-btn">
-              <h3 class="">Sign Up</h3>
-            </div>
-          </a>
-
+        
+        <div class="b-login-btn">
+          <button class="" type="submit" form="form1" value="Submit"> 
+            <h2>
+              Sign Up
+            </h2>
+          </button>
+  
         </div>
+
     </main>
- 
+
+    
+    <script>
+      const form = document.querySelector('form');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log('password', password);
+        console.log('email',email );
+      });
+    </script>
+
+
 <%- include('partials/footer'); -%>
