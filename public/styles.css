@@ -361,7 +361,6 @@ a { text-decoration: none; }
   padding: 15px;
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #ac278a, #5855FC);
-  border-radius: 15px;
 }
 
 /* LOGIN & SIGNUP */
@@ -422,7 +421,7 @@ a { text-decoration: none; }
 
     /* login & signup */
     .login-header {
-      margin: 150px;
+      margin: 10px;
     }
 
     .b-vertical {
@@ -482,7 +481,19 @@ a { text-decoration: none; }
     .b-overview-section {
       justify-content: space-around;
       margin: 50px;
-  }
+    }
+    
+    .b-overview,
+    .b-account-section,
+    .b-qrcode-section,
+    .b-qraccount-section {
+      font-size: 20px;
+    }
+
+    .b-subtitle {
+      font-size: 15px;
+    }
+
   
   /* qrcode */
   .b-account-section,
@@ -495,6 +506,10 @@ a { text-decoration: none; }
 
   .b-overview-subheader {
     display:none;
+  }
+
+  .b-qr-btn h4 {
+    font-size: 17px;
   }
 
 }

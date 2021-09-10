@@ -1,11 +1,26 @@
-
 const User = require('../models/User');
 
-
 // ERROR HANDLING
+// Flow: Signup error —> Populate object with error msg (email,pw or both) --> Return error msg -—> Send JSON back to user with error msg in catch fn
 const handleErrors = (err) => {
-  console.log(err.message, err.code);
-  let error = {email:'', password:''};
+  console.log('err code', err.code);
+  let errors = {email:'', password:''};
+
+  // DUPLICATED EMAIL
+  if (err.code === 11000) {
+    errors.email = "That email is already registered. Please choose another email.";
+    return errors;
+  } 
+
+  // ERROR VALIDATION
+  if (err.message.includes('user validation failed')) {
+    // err.errors = object (contains properties (msg, path, value)); Object.values(err.errors = array with objects (with same properties)
+    Object.values(err.errors).forEach(({properties}) => {
+      errors[properties.path] = properties.message;
+    });
+  }
+
+  return errors;
 }
 
 module.exports.signup_get = (req,res) => {
@@ -24,8 +39,8 @@ module.exports.signup_post = async(req,res) => {
     res.status(201).json(user);
   }
   catch (err) {
-    handleErrors(err);
-    res.status(400).send('error, please try again');
+    const errors = handleErrors(err);
+    res.status(400).json({errors});
   }
 }
 

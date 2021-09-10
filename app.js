@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 
 // database connection
-const dbURI = 'mongodb+srv://lindaluz:test12345@blingbankbling.5khmk.mongodb.net/auth-node';
+const dbURI = 'mongodb+srv://lindaluz:test123@blingbankbling.5khmk.mongodb.net/auth-node';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) => app.listen(4000))
   .catch((err) => console.log(err));
