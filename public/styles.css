@@ -387,7 +387,7 @@ button {
 
 .b-login-form {
   background: linear-gradient(to left, #ac278a, #5855FC);
-  margin: 20px;
+  margin: 10px;
   border-radius: 15px;
   padding: 18px;
 }
@@ -421,7 +421,15 @@ button {
   letter-spacing: 2px;
   padding: 10px;
   border-radius: 15px;
-  margin: 0 40px;
+  margin: 10px 40px;
+}
+
+.b-login-hyperlink  {
+  font-size: 11px;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  color: #5855FC;
 }
 
 /* MEDIA QUERIES */
@@ -561,5 +569,52 @@ button {
     button > h2 {
       font-size: 20px;
       text-transform: uppercase;
+    }
+
+    /* dashboard */
+    .b-activity-section {
+      justify-content: space-around
+    }
+
+    .b-card-section {
+      position: unset;
+      justify-content: center;
+  }
+
+    .b-months {
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 450px;
+    }
+
+    .b-balance-section {
+      margin-bottom: 10px;
+    }
+
+    .b-card-wrapper {
+      height: 120px;
+    }
+    .b-expenses-item {
+      padding: 22px;
+    }
+
+    .b-overview-section {
+      justify-content: space-around;
+    }
+
+    .b-account-section {
+      display: flex;
+      justify-content: center;
+    }
+
+    .b-qrform {
+      display: flex;
+      justify-content: center;
+    }
+
+    .b-drag {
+      border: 4px solid #ac278a;
+      border-radius: 30px;
+      margin: 10px auto;
     }
   }

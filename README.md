@@ -32,7 +32,6 @@ Next features:
 
 Personal challenges:
 - [ ] async/await
-- [ ] 
 - [ ] ...
 - [ ] ...
 
