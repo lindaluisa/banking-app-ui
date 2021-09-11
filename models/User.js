@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Please enter an email'],
     unique: true,
     lowercase: true,
-    validate: [isEmail, 'Please insert a valid email']
+    validate: [isEmail, 'Please insert a valid email.']
   },
   password: {
     type: String,
@@ -31,6 +31,19 @@ userSchema.post('save', function(storedCredentials, next){
   console.log('a new user was created & saved', storedCredentials);
   next();
 });
+
+// static method to login user
+userSchema.statics.login = async function(email, password) {
+  const user = await this.findOne({ email: email }) // user model itself, not instance; email:email could be shortened to email, since params match
+  if (user) {
+    const auth = await bcrypt.compare(password, user.password); // first param: pw from user input; snd param: db password
+    if (auth) {
+      return user;
+    }
+    throw Error('The password is incorrect.');
+  }
+  throw Error('The email is incorrect.');
+}
 
 // model based on schema; name (e.g., 'user') must be the singular of db collection name
 const User = mongoose.model('user', userSchema);

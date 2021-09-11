@@ -5,53 +5,84 @@
     </header>
     
     <main>
-      <div>
-        <h1 class="b-vertical">Bling Bank Bling</h1>
-      </div>
 
+      <div class="b-desktop-wrapper">
 
-      <section class="b-login-section b-space">
-
-        <h4 class="b-login-title b-space">The only banking app you'll ever need.</h4>
-        <form id="form1" class="b-login-form" action="/signup">
-          <h2>Sign up</h2>
-          <!-- <div class="b-login-wrapper b-subtitle"> -->
-
-              <label for="email">Email</label>
-              <input class="b-input-login" type="text" name="email" required/>
-              <div class="email error"></div>
-          
-              <label for="password">Password</label>
-              <input class="b-input-login" type="password" name="password" required/>
-              <div class="password error"></div>
-
-            <!-- </div> -->
-          </form>
-        </section>
-
-        
-        <div class="b-login-btn">
-          <button class="" type="submit" form="form1" value="Submit"> 
-            <h2>
-              Sign Up
-            </h2>
-          </button>
-  
+        <div class="b-desktop-title-wrapper">
+          <h1 class="b-vertical">Bling Bank Bling</h1>
         </div>
+  
+
+        <div>
+          
+          <section class="b-login-section b-space">
+            <h4 class="b-login-title b-space">The only banking app you'll ever need.</h4>
+            <form id="form1" class="b-login-form" action="/signup">
+              <h2>Sign up</h2>
+
+                <label for="email">Email</label>
+                <input class="b-input-login" type="text" name="email" required/>
+                <div class="email b-error"></div>
+            
+                <label for="password">Password</label>
+                <input class="b-input-login" type="password" name="password" required/>
+                <div class="password b-error"></div>
+            </form>
+          </section>
+    
+            
+          <div class="b-login-btn">
+            <button class="" type="submit" form="form1" value="Submit"> 
+              <h2>Sign Up</h2>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
 
     </main>
 
     
     <script>
       const form = document.querySelector('form');
+      const emailError = document.querySelector('.email.b-error');
+      const passwordError = document.querySelector('.password.b-error');
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log('password', password);
-        console.log('email',email );
+      form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // reset errors
+      emailError.textContent = '';
+      passwordError.textContent = '';
+
+      // get the values
+      const email = form.email.value;
+      const password = form.password.value;
+
+        try {
+          const res = await fetch('/signup', {
+            method: 'POST',
+            body: JSON.stringify({ email, password }), // sent body
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          const dbUser = await res.json(); // data sent back to res.status(XXX) in authController.js
+          console.log('dbUser', dbUser);
+  
+          if (dbUser.errors) {
+            emailError.textContent = dbUser.errors.email;
+            passwordError.textContent = dbUser.errors.password;
+          }
+          if (dbUser.user) {
+            location.assign('/')
+          }
+        }
+        catch (err) {
+          console.log(err);
+        };
       });
+      
     </script>
 
 

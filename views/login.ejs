@@ -1,56 +1,85 @@
 <%- include('partials/header'); -%>
 
 
-<header class="b-header login-header">
-    </header>
+<header class="b-header login-header"></header>
     
     <main>
 
-      <div>
+      <div class="b-desktop-wrapper">
+        
+      <div class="b-desktop-title-wrapper">
         <h1 class="b-vertical">Bling Bank Bling</h1>
       </div>
 
-      <section class="b-login-section b-space">
-
-        <h4 class="b-login-title b-space">Happy to see you again.</h4>
-        <form id="form1" class="b-login-form" action="/signup">
-          <h2>Login</h2>
-          <!-- <div class="b-login-wrapper b-subtitle"> -->
-
-              <label for="email">Email</label>
-              <input class="b-input-login" type="text" name="email" required/>
-              <div class="email error"></div>
-          
-              <label for="password">Password</label>
-              <input class="b-input-login" type="password" name="password" required/>
-              <div class="password error"></div>
-
-            <!-- </div> -->
-          </form>
-        </section>
-
-        
-        <div class="b-login-btn">
-          <button class="" type="submit" form="form1" value="Submit"> 
-            <h2>
-              Login
-            </h2>
-          </button>
+      <div>
+        <section class="b-login-section b-space">
   
+          <h4 class="b-login-title b-space">Happy to see you again.</h4>
+          <form id="form1" class="b-login-form" action="/login">
+            <h2>Login</h2>
+
+  
+                <label for="email">Email</label>
+                <input class="b-input-login" type="text" name="email" required/>
+                <div class="email b-error"></div>
+            
+                <label for="password">Password</label>
+                <input class="b-input-login" type="password" name="password" required/>
+                <div class="password b-error"></div>
+  
+
+            </form>
+          </section>
+  
+          <div class="b-login-btn">
+            <button class="" type="submit" form="form1" value="Submit"> 
+              <h2>Login</h2>
+            </button>
+          </div>
+
         </div>
 
+      </div>
     </main>
 
     
     <script>
       const form = document.querySelector('form');
+      const emailError = document.querySelector('.email.b-error');
+      const passwordError = document.querySelector('.password.b-error');
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // reset errors
+        emailError.textContent = '';
+        passwordError.textContent = '';
+
+        // get the values
         const email = form.email.value;
         const password = form.password.value;
-        console.log('password', password);
-        console.log('email',email );
+
+          try {
+            const res = await fetch('/login', {
+              method: 'POST',
+              body: JSON.stringify({ email, password }),
+              headers: { 'Content-Type': 'application/json' }
+            });
+
+            const dbUser = await res.json(); //
+            console.log('dbUser', dbUser);
+
+            if (dbUser.errors) { // displayed in DOM
+              emailError.textContent = dbUser.errors.email;
+              passwordError.textContent = dbUser.errors.password;
+            }
+            if (dbUser.user) {
+              location.assign('/')
+            }
+          }
+          catch (err) {
+            console.log(err);
+          };
       });
     </script>
 

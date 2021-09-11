@@ -28,3 +28,14 @@ Next features:
 - [ ] ...
 - [ ] ...
 
+
+
+Personal challenges:
+- [ ] async/await
+- [ ] 
+- [ ] ...
+- [ ] ...
+
+
+***
+*None of the pushed database passwords are valid. They were changed immediately after pushing.*

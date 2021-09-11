@@ -56,6 +56,12 @@ button {
   padding: 5px 30px;
 }
 
+.b-error{
+  color: #1d1b34;
+  font-size: 10px;
+  text-transform: none;
+}
+
 /* HEADER */
 .b-header {
   width: 100%;
@@ -518,5 +524,42 @@ button {
   .b-qr-btn h4 {
     font-size: 17px;
   }
-
 }
+
+
+@media only screen 
+  and (min-device-width: 1024px) {
+    .b-desktop-title-wrapper {
+      width: 85%;
+    }
+
+    .b-vertical {
+      top: 10px;
+      left: 130px;
+      width: 15%;
+      font-size: 170px;
+    }
+   .b-desktop-wrapper {
+     display: flex;
+    } 
+
+    .b-login-section > h4 {
+      font-size: 30px;
+      padding: 20px;
+    }
+
+    .b-login-form {
+      padding: 20px;
+      font-size: 18px;
+  }
+
+    .b-input-login,
+    .b-login-btn {
+      padding: 10px;
+    }
+
+    button > h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }
