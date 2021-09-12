@@ -13,25 +13,28 @@ Code base:
 - [x] HTML, CSS, JS
 - [x] Node.js, Express, MongoDB
 - [x] Object Data Modelin with Mongoose
-- [x] Login System with Hashing
+- [x] Login/Logout System with Hashing
+- [x] JSON Web Token
+- [x] Secured Routes
+- [x] Conditional statements with Embedded JS Templates
+- [x] QR Code API
 - [x] User-friendly Design
 - [x] Mobile First
-- [x] QR Code API
-- [x] CSS: Flexbox, Toggle, Media Queries (iPad)
+- [x] CSS: Flexbox, Toggle, Media Queries (iPad, desktop)
 - [x] JS: API, input validation, asyn/await fn
 
 
 
 Next features:
+- [ ] CRUD application: updating and deleting credit cards
 - [ ] Moving to React
-- [ ] Media Queries for desktop
 - [ ] ...
 - [ ] ...
-
 
 
 Personal challenges:
 - [ ] async/await
+- [ ] jwt.sign({})/ jwt.verify({})
 - [ ] ...
 - [ ] ...
 

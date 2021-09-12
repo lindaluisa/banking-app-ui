@@ -10,6 +10,7 @@
 
         <div class="b-desktop-title-wrapper">
           <h1 class="b-vertical">Bling Bank Bling</h1>
+          <h1 class="b-vertical2">Money is a thing.</h1>
         </div>
   
 
@@ -74,14 +75,13 @@
             headers: { 'Content-Type': 'application/json' }
           });
 
-          const dbUser = await res.json(); // data sent back to res.status(XXX) in authController.js
-          console.log('dbUser', dbUser);
+          const data = await res.json(); // data sent back to res.status(XXX) in authController.js
   
-          if (dbUser.errors) {
-            emailError.textContent = dbUser.errors.email;
-            passwordError.textContent = dbUser.errors.password;
+          if (data.errors) {
+            emailError.textContent = data.errors.email;
+            passwordError.textContent = data.errors.password;
           }
-          if (dbUser.user) {
+          if (data.user) {
             location.assign('/')
           }
         }

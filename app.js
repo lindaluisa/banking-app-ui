@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes');
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -20,10 +21,12 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
   .catch((err) => console.log(err));
 
 // routes
+app.get('*', checkUser);
 app.get('/', (req, res) => res.render('index'));
-app.get('/expense', (req, res) => res.render('expense'));
-app.get('/hello', (req, res) => res.render('hello'));
-app.get('/qrcode', (req, res) => res.render('qrcode'));
+// app.get('/expense', (req, res) => res.render('expense'));
+app.get('/expense', requireAuth, (req, res) => res.render('expense'));
+app.get('/hello', requireAuth, (req, res) => res.render('hello'));
+app.get('/qrcode', requireAuth, (req, res) => res.render('qrcode'));
 app.use(authRoutes);
 
 

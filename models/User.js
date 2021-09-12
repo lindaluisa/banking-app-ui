@@ -19,8 +19,7 @@ const userSchema = new mongoose.Schema({
 
 // MONGOOSE PRE & POST HOOKS 
 // fire fn BEFORE new user is saved to db; this: local instant of the user before being saved in the db; next(); leads to the next middleware
-userSchema.pre('save', async function(next){
-  console.log('user about to be created', this);
+userSchema.pre('save', async function (next){
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(this.password, salt); //this.pw refers to the pw the user tries to store
   next();
@@ -28,15 +27,15 @@ userSchema.pre('save', async function(next){
 
 // fire fn AFTER new user is saved to db
 userSchema.post('save', function(storedCredentials, next){
-  console.log('a new user was created & saved', storedCredentials);
   next();
 });
 
 // static method to login user
 userSchema.statics.login = async function(email, password) {
-  const user = await this.findOne({ email: email }) // user model itself, not instance; email:email could be shortened to email, since params match
+  const user = await this.findOne({ email }); // user model itself, not instance; email:email could be shortened to email, since params match
+  
   if (user) {
-    const auth = await bcrypt.compare(password, user.password); // first param: pw from user input; snd param: db password
+    const auth = await bcrypt.compare(password, user.password); // first param: pw from user input; snd param: db password; bcrypt hashes user pw under the hood and compares hashed pws
     if (auth) {
       return user;
     }

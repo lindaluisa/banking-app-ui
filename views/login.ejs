@@ -9,6 +9,7 @@
         
       <div class="b-desktop-title-wrapper">
         <h1 class="b-vertical">Bling Bank Bling</h1>
+        <h6 class="b-vertical2">Money is a thing.</h6>
       </div>
 
       <div>
@@ -75,15 +76,14 @@
               headers: { 'Content-Type': 'application/json' }
             });
 
-            const dbUser = await res.json(); //
-            console.log('dbUser', dbUser);
+            const data = await res.json(); 
 
-            if (dbUser.errors) { // displayed in DOM
-              emailError.textContent = dbUser.errors.email;
-              passwordError.textContent = dbUser.errors.password;
+            if (data.errors) { // displayed in DOM
+              emailError.textContent = data.errors.email;
+              passwordError.textContent = data.errors.password;
             }
-            if (dbUser.user) {
-              location.assign('/')
+            if (data.user) {
+              location.assign('/');
             }
           }
           catch (err) {
